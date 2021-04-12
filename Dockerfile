@@ -7,6 +7,7 @@ ADD https://github.com/bazelbuild/bazelisk/releases/download/v1.2.1/bazelisk-lin
 RUN chmod +x /usr/local/bin/bazel \
   && apt-get update \
   && apt-get dist-upgrade -y \
-  && apt-get install -y build-essential ca-certificates
+  && apt-get install -y build-essential ca-certificates \
+  && apt-get install -y openjdk-11-jdk
 
 ENTRYPOINT [ "/usr/local/bin/bazel" ]
